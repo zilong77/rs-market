@@ -48,12 +48,14 @@
     }
 
     .logo {
-      width: 150px; /* Ukuran logo lebih kecil */
-      height: 150px; /* Tinggi logo agar proporsional */
+      width: 100%; /* Pastikan logo mengambil 100% dari lebar kontainernya */
+      max-width: 150px; /* Maksimal lebar logo */
+      height: auto; /* Biarkan tinggi proporsional */
       border-radius: 50%; /* Buat logo jadi bulat */
       border: 5px solid #FE0000; /* Border warna merah */
       padding: 10px;
       background-color: white; /* Warna background di dalam frame */
+      box-sizing: border-box; /* Pastikan padding dan border dihitung dalam ukuran elemen */
     }
 
     label {
@@ -133,6 +135,25 @@
       font-weight: 600;
       margin-top: 5px;
     }
+
+    @media (max-width: 600px) {
+      .logo-container {
+        margin-bottom: 10px; /* Kurangi jarak di perangkat kecil */
+      }
+
+      .logo {
+        max-width: 120px; /* Ukuran logo lebih kecil di perangkat mobile */
+        padding: 5px; /* Kurangi padding agar logo tidak terpotong */
+      }
+
+      h1 {
+        font-size: 20px; /* Sesuaikan ukuran font pada mobile */
+      }
+
+      button {
+        font-size: 14px; /* Kurangi ukuran tombol pada mobile */
+      }
+    }
   </style>
 
   <script>
@@ -183,7 +204,7 @@
       <!-- Checkbox untuk persetujuan -->
       <div class="checkbox-label">
         <input type="checkbox" id="consent">
-        <label for="consent">Saya bertanggung jawab atas nominal bid saya dan tidak akan BID AND RUN</label>
+        <label for="consent">Saya bertanggung jawab dan setuju jika saya melakukan Bid N Run maka siap diviralkan!!</label>
       </div>
 
       <button type="submit">Kirim via WhatsApp</button>
