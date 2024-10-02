@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi Lelang RS MARKET</title>
+
+  <style>
+    /* Font dari Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    body {
+      background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-big.png'); /* Background motif karbon */
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: #fff; /* Warna teks putih */
+    }
+
+    /* Container utama */
+    .container {
+      background-color: rgba(0, 0, 0, 0.8); /* Latar belakang semi transparan */
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      width: 400px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      color: #ff0000; /* Warna merah sesuai logo RS MARKET */
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    /* Styling untuk gambar logo */
+    .logo {
+      max-width: 200px; /* Memperbesar logo */
+      width: 100%;      /* Pastikan logo responsif */
+      margin-bottom: 10px; /* Kurangi jarak antara logo dan judul */
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      color: #ccc;
+      font-weight: 600;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #ccc;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #ff0000; /* Tombol berwarna merah sesuai logo RS MARKET */
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d40000;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: #999;
+      font-size: 14px;
+    }
+
+    /* Styling untuk ikon dan tautan sosial */
+    .social-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .social-section .social-item {
+      text-align: center;
+      width: 48%; /* Lebar masing-masing item 48% agar pas dua di satu baris */
+    }
+
+    .social-section .social-item img {
+      width: 30px; /* Ukuran logo */
+      height: 30px;
+    }
+
+    .social-section .social-item .social-text {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    /* Styling untuk bagian Wall of BNR */
+    .wall-bnr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      margin-bottom: 10px; /* Letakkan di atas footer */
+    }
+
+    .wall-bnr img {
+      width: 40px; /* Ukuran tengkorak */
+      margin-right: 10px;
+    }
+
+    .wall-bnr a {
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .wall-bnr a:hover {
+      color: #ff0000; /* Warna merah saat hover */
+    }
+
+  </style>
+
+  <script>
+    function sendMessage() {
+      const name = document.getElementById('name').value;
+      const address = document.getElementById('address').value;
+      const tiktok = document.getElementById('tiktok').value;
+      const phone = document.getElementById('phone').value;
+      const consent = document.getElementById('consent').checked;
+
+      if (!consent) {
+        alert("Anda harus menyetujui syarat dan ketentuan untuk melanjutkan.");
+        return;
+      }
+
+      const whatsappNumber = '6283804873547'; 
+      const message = `Nama: ${name}%0aAlamat: ${address}%0aUsername TikTok: ${tiktok}%0aNomor HP: ${phone}`;
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
+      window.open(whatsappUrl, '_blank');
+    }
+  </script>
+
+</head>
+<body>
+
+  <div class="container">
+    <!-- Tambahkan logo di sini -->
+    <img src="logo-rs-market.jpg" alt="Logo Lelang RS MARKET" class="logo">
+
+    <h1>Registrasi Lelang RS MARKET</h1>
+
+    <form onsubmit="event.preventDefault(); sendMessage();">
+      <label for="name">Nama:</label>
+      <input type="text" id="name" placeholder="Masukkan Nama Anda" required>
+
+      <label for="address">Alamat Lengkap:</label>
+      <input type="text" id="address" placeholder="Masukkan Alamat lengkap" required>
+
+      <label for="tiktok">Username TikTok:</label>
+      <input type="text" id="tiktok" placeholder="Masukkan Username TikTok" required>
+
+      <label for="phone">Nomor HP:</label>
+      <input type="text" id="phone" placeholder="Masukkan Nomor HP" required>
+
+      <!-- Checkbox untuk persetujuan -->
+      <div class="checkbox-label">
+        <input type="checkbox" id="consent">
+        <label for="consent">Saya bertanggung jawab atas nominal bid saya dan tidak akan BID AND RUN</label>
+      </div>
+
+      <button type="submit">Kirim via WhatsApp</button>
+    </form>
+
+    <!-- Seksi Ikon Sosial Media dalam satu baris -->
+    <div class="social-section">
+      <!-- Follow Instagram -->
+      <div class="social-item">
+        <p class="social-text">Follow IG RS.Market</p>
+        <a href="https://www.instagram.com/rs.market/" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+        </a>
+      </div>
+
+      <!-- Join Grup WhatsApp -->
+      <div class="social-item">
+        <p class="social-text">Join Grup RS.Market</p>
+        <a href="https://chat.whatsapp.com/YourGroupLinkHere" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
+
+    <!-- Bagian Wall of BNR, ditempatkan di atas footer -->
+    <div class="wall-bnr">
+      <img src="images/skull.png" alt="Tengkorak">
+      <a href="https://docs.google.com/spreadsheets/YourLinkHere" target="_blank">WALL OF BNR</a>
+    </div>
+
+    <footer>
+      &copy; 2024 RS MARKET
+    </footer>
+  </div>
+
+</body>
+</html>
