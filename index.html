@@ -40,10 +40,20 @@
     }
 
     /* Styling untuk gambar logo */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px; /* Jarak antara logo dan judul */
+    }
+
     .logo {
-      max-width: 100%; /* Buat logo agar maksimal selebar container */
-      height: auto;
-      margin-bottom: 10px; /* Kurangi jarak antara logo dan judul */
+      width: 150px; /* Ukuran logo lebih kecil */
+      height: 150px; /* Tinggi logo agar proporsional */
+      border-radius: 50%; /* Buat logo jadi bulat */
+      border: 5px solid #FE0000; /* Border warna merah */
+      padding: 10px;
+      background-color: white; /* Warna background di dalam frame */
     }
 
     label {
@@ -150,8 +160,10 @@
 <body>
 
   <div class="container">
-    <!-- Tambahkan logo di sini -->
-    <img src="rsmarket.jpg" alt="Logo RS MARKET" class="logo">
+    <!-- Logo dengan frame bulat -->
+    <div class="logo-container">
+      <img src="rsmarket.jpg" alt="Logo RS MARKET" class="logo">
+    </div>
 
     <h1>Registrasi Lelang RS MARKET</h1>
 
@@ -171,7 +183,7 @@
       <!-- Checkbox untuk persetujuan -->
       <div class="checkbox-label">
         <input type="checkbox" id="consent">
-        <label for="consent">Saya bertanggung jawab dan setuju jika saya melakukan Bid N Run maka siap diviralkan</label>
+        <label for="consent">Saya bertanggung jawab atas nominal bid saya dan tidak akan BID AND RUN</label>
       </div>
 
       <button type="submit">Kirim via WhatsApp</button>
