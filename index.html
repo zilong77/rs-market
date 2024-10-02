@@ -7,50 +7,52 @@
 
   <style>
     /* Font dari Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
     body {
-      background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-big.png'); /* Background motif karbon */
-      font-family: 'Poppins', sans-serif;
+      background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre-v2.png');
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
       flex-direction: column;
-      color: #fff; /* Warna teks putih */
     }
 
     /* Container utama */
     .container {
-      background-color: rgba(0, 0, 0, 0.8); /* Latar belakang semi transparan */
+      background-color: #fff;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       width: 400px;
       padding: 20px;
       text-align: center;
       margin-bottom: 20px;
     }
 
+    /* Heading dengan font yang lebih keren */
     h1 {
-      color: #ff0000; /* Warna merah sesuai logo RS MARKET */
+      color: #d32f2f; /* Warna merah untuk mencocokkan dengan logo RS MARKET */
       margin-bottom: 15px;
-      font-size: 24px;
+      font-size: 28px;
+      font-family: 'Oswald', sans-serif;
     }
 
     /* Styling untuk gambar logo */
     .logo {
-      max-width: 200px; /* Memperbesar logo */
-      width: 100%;      /* Pastikan logo responsif */
-      margin-bottom: 10px; /* Kurangi jarak antara logo dan judul */
+      max-width: 200px;
+      width: 100%;
+      margin-bottom: 10px;
     }
 
     label {
       display: block;
       text-align: left;
       margin-bottom: 5px;
-      color: #ccc;
-      font-weight: 600;
+      color: #666;
+      font-weight: 500;
     }
 
     input[type="text"] {
@@ -71,13 +73,13 @@
       display: flex;
       align-items: center;
       font-size: 14px;
-      color: #ccc;
+      color: #666;
       text-align: left;
       margin-bottom: 15px;
     }
 
     button {
-      background-color: #ff0000; /* Tombol berwarna merah sesuai logo RS MARKET */
+      background-color: #d32f2f;
       color: white;
       padding: 10px;
       border: none;
@@ -88,7 +90,7 @@
     }
 
     button:hover {
-      background-color: #d40000;
+      background-color: #b71c1c;
     }
 
     footer {
@@ -97,7 +99,6 @@
       font-size: 14px;
     }
 
-    /* Styling untuk ikon dan tautan sosial */
     .social-section {
       display: flex;
       justify-content: space-between;
@@ -107,44 +108,19 @@
 
     .social-section .social-item {
       text-align: center;
-      width: 48%; /* Lebar masing-masing item 48% agar pas dua di satu baris */
+      width: 48%;
     }
 
     .social-section .social-item img {
-      width: 30px; /* Ukuran logo */
+      width: 30px;
       height: 30px;
     }
 
     .social-section .social-item .social-text {
       font-size: 16px;
-      color: #fff;
+      color: #333;
       font-weight: 600;
       margin-top: 5px;
-    }
-
-    /* Styling untuk bagian Wall of BNR */
-    .wall-bnr {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
-      margin-bottom: 10px; /* Letakkan di atas footer */
-    }
-
-    .wall-bnr img {
-      width: 40px; /* Ukuran tengkorak */
-      margin-right: 10px;
-    }
-
-    .wall-bnr a {
-      font-size: 16px;
-      font-weight: bold;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .wall-bnr a:hover {
-      color: #ff0000; /* Warna merah saat hover */
     }
 
   </style>
@@ -162,7 +138,7 @@
         return;
       }
 
-      const whatsappNumber = '6283804873547'; 
+      const whatsappNumber = '6283804873547';
       const message = `Nama: ${name}%0aAlamat: ${address}%0aUsername TikTok: ${tiktok}%0aNomor HP: ${phone}`;
 
       const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
@@ -174,8 +150,8 @@
 <body>
 
   <div class="container">
-    <!-- Tambahkan logo di sini -->
-    <img src="logo-rs-market.jpg" alt="Logo Lelang RS MARKET" class="logo">
+    <!-- Logo RS MARKET -->
+    <img src="logo_rs_market.png" alt="Logo RS MARKET" class="logo">
 
     <h1>Registrasi Lelang RS MARKET</h1>
 
@@ -192,7 +168,6 @@
       <label for="phone">Nomor HP:</label>
       <input type="text" id="phone" placeholder="Masukkan Nomor HP" required>
 
-      <!-- Checkbox untuk persetujuan -->
       <div class="checkbox-label">
         <input type="checkbox" id="consent">
         <label for="consent">Saya bertanggung jawab atas nominal bid saya dan tidak akan BID AND RUN</label>
@@ -201,29 +176,21 @@
       <button type="submit">Kirim via WhatsApp</button>
     </form>
 
-    <!-- Seksi Ikon Sosial Media dalam satu baris -->
+    <!-- Bagian untuk Ikon Sosial Media -->
     <div class="social-section">
-      <!-- Follow Instagram -->
       <div class="social-item">
-        <p class="social-text">Follow IG RS.Market</p>
-        <a href="https://www.instagram.com/rs.market/" target="_blank">
+        <p class="social-text">Follow IG RS MARKET</p>
+        <a href="https://www.instagram.com/rsmarket/" target="_blank">
           <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
         </a>
       </div>
 
-      <!-- Join Grup WhatsApp -->
       <div class="social-item">
-        <p class="social-text">Join Grup RS.Market</p>
-        <a href="https://chat.whatsapp.com/YourGroupLinkHere" target="_blank">
+        <p class="social-text">Join Grup RS MARKET</p>
+        <a href="https://chat.whatsapp.com/RSMarketGroup" target="_blank">
           <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
         </a>
       </div>
-    </div>
-
-    <!-- Bagian Wall of BNR, ditempatkan di atas footer -->
-    <div class="wall-bnr">
-      <img src="images/skull.png" alt="Tengkorak">
-      <a href="https://docs.google.com/spreadsheets/YourLinkHere" target="_blank">WALL OF BNR</a>
     </div>
 
     <footer>
